@@ -20,5 +20,8 @@
   },
   "scripts": {
     "build": "webpack"
-  }
+  },
+  "browserslist": [
+    "> 0.25%, not dead"
+  ]
 }
