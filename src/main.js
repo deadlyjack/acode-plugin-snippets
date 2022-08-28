@@ -242,7 +242,7 @@ class AcodeSnippets {
   }
 
   async #copySnippets(url) {
-    const loader = acode.loader('Copying...', '');
+    const loader = acode.loader('', 'Loading...');
     loader.show();
     await this.#copyRecursive(plugin.files, url, loader)
       .finally(() => {
@@ -257,7 +257,7 @@ class AcodeSnippets {
   }
 
   async #copyFile(file, url, loader) {
-    loader.setMessage(`Coping ${file}...`);
+    loader.setMessage(`Copying ${file}...`);
     const { response } = await ajax.get(`${this.#baseUrl}${file}`, {
       responseType: 'text'
     });
