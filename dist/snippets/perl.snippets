@@ -80,7 +80,7 @@ snippet fore
 	${1:expression} foreach @${2:array};${3}
 # Package
 snippet package
-	package ${1:`substitute(Filename('', 'Page Title'), '^.', '\u&', '')`};
+	package ${1};
 
 	${2}
 
@@ -89,7 +89,7 @@ snippet package
 	__END__
 # Package syntax perl >= 5.14
 snippet packagev514
-	package ${1:`substitute(Filename('', 'Page Title'), '^.', '\u&', '')`} ${2:0.99};
+	package ${1} ${2:0.99};
 
 	${3}
 
