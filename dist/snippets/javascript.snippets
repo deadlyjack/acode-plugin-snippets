@@ -74,16 +74,25 @@ regex /([,{[])|^\s*/:f/
 	${1:method_name}: function(${2:attribute}) {
 		${0}
 	}${3:,}
-# setTimeout function
+# Timer functions
 snippet setTimeout
 regex /\b/st|timeout|setTimeo?u?t?/
-	setTimeout(function() {${3:$TM_SELECTED_TEXT}}, ${1:10});
+	setTimeout(function() {${2}}, ${1:10});
+snippet setInterval
+	setInterval(function() {${2}}, ${1:10});
 # Get Elements
 snippet gett
 	getElementsBy${1:TagName}('${2}')${3}
+snippet query
+	querySelector("${1}")
 # Get Element
 snippet get
 	getElementBy${1:Id}('${2}')${3}
+snippet queryAll
+	querySelectorAll("${1}")
+# eventlistener
+snippet addeventlistener
+		addEventListener("${1:click}", ${2})
 # console.log (Firebug)
 snippet cl
 	console.log(${1});
@@ -106,9 +115,9 @@ snippet /**
 	 */
 snippet @par
 regex /^\s*\*\s*/@(para?m?)?/
-	@param {${1:type}} ${2:name} ${3:description}
+	param {${1:type}} ${2:name} ${3:description}
 snippet @ret
-	@return {${1:type}} ${2:description}
+	returns {${1:type}} ${2:description}
 # JSON.parse
 snippet jsonp
 	JSON.parse(${1:jstr});
