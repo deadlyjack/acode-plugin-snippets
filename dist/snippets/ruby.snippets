@@ -78,23 +78,23 @@ snippet until
 		${2}
 	end
 snippet cla class .. end
-	class ${1:`substitute(Filename(), '\(_\|^\)\(.\)', '\u\2', 'g')`}
+	class ${1}
 		${2}
 	end
 snippet cla class .. initialize .. end
-	class ${1:`substitute(Filename(), '\(_\|^\)\(.\)', '\u\2', 'g')`}
+	class ${1}
 		def initialize(${2:args})
 			${3}
 		end
 	end
 snippet cla class .. < ParentClass .. initialize .. end
-	class ${1:`substitute(Filename(), '\(_\|^\)\(.\)', '\u\2', 'g')`} < ${2:ParentClass}
+	class ${1} < ${2:ParentClass}
 		def initialize(${3:args})
 			${4}
 		end
 	end
 snippet cla ClassName = Struct .. do .. end
-	${1:`substitute(Filename(), '\(_\|^\)\(.\)', '\u\2', 'g')`} = Struct.new(:${2:attr_names}) do
+	${1} = Struct.new(:${2:attr_names}) do
 		def ${3:method_name}
 			${4}
 		end
@@ -109,7 +109,7 @@ snippet cla class << self .. end
 	end
 # class .. < DelegateClass .. initialize .. end
 snippet cla-
-	class ${1:`substitute(Filename(), '\(_\|^\)\(.\)', '\u\2', 'g')`} < DelegateClass(${2:ParentClass})
+	class ${1} < DelegateClass(${2:ParentClass})
 		def initialize(${3:args})
 			super(${4:del_obj})
 
@@ -117,17 +117,17 @@ snippet cla-
 		end
 	end
 snippet mod module .. end
-	module ${1:`substitute(Filename(), '\(_\|^\)\(.\)', '\u\2', 'g')`}
+	module ${1}
 		${2}
 	end
 snippet mod module .. module_function .. end
-	module ${1:`substitute(Filename(), '\(_\|^\)\(.\)', '\u\2', 'g')`}
+	module ${1}
 		module_function
 
 		${2}
 	end
 snippet mod module .. ClassMethods .. end
-	module ${1:`substitute(Filename(), '\(_\|^\)\(.\)', '\u\2', 'g')`}
+	module ${1}
 		module ClassMethods
 			${2}
 		end

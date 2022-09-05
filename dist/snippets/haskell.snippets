@@ -31,10 +31,9 @@ snippet class
 	class ${1:Class} a where
 		${2}
 snippet module
-	module `substitute(substitute(expand('%:r'), '[/\\]','.','g'),'^\%(\l*\.\)\?','','')` (
-	)	where
-	`expand('%') =~ 'Main' ? "\n\nmain = do\n  print \"hello world\"" : ""`
-
+	module ${1}(${2}
+	) where
+	
 snippet const
 	${1:name} :: ${2:a}
 	$1 = ${3:undefined}

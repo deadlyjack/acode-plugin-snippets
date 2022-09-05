@@ -106,3 +106,20 @@ snippet r2r
 			${2}
 		}${3:, context_instance=RequestContext(request)}
 	)
+
+# Django template language
+snippet block
+	{% block ${1:container} %}
+	{% endblock %}
+snippet for
+	{% for ${1:obj} in ${2:objs} %}
+		${3}
+	{% endfor %}
+snippet if
+	{% if ${1} %}
+		${2}
+	{% endif %}
+snippet loads
+	{% load ${1:static} %}
+snippet tag:static
+	{% ${1:static} '${2}' %}
