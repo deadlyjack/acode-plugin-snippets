@@ -202,3 +202,7 @@ snippet requ
 guard ^\s*
 	var ${1/.*\/(.)/\u$1/} = require("${1}").${1/.*\/(.)/\u$1/};
 	$0
+snippet prom
+	new Promise((resolve, reject) => {
+		$1
+	});

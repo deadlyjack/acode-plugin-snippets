@@ -2,7 +2,7 @@
   "id": "acode.plugin.snippets",
   "name": "Snippets",
   "main": "dist/main.js",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "readme": "readme.md",
   "icon": "icon.png",
   "files": [
@@ -29,6 +29,7 @@
     "snippets/java.snippets",
     "snippets/javascript.snippets",
     "snippets/jsp.snippets",
+    "snippets/jsx.snippets",
     "snippets/liquid.snippets",
     "snippets/lsl.snippets",
     "snippets/lua.snippets",
