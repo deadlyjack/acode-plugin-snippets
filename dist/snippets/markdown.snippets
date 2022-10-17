@@ -86,3 +86,44 @@ snippet pullquote
 	{% pullquote %}
 	${1:text} {" ${2:quote} "} ${3:text}
 	{% endpullquote %}
+
+snippet unordered_list
+	- ${1:${SELECTED_TEXT:first}}
+	- ${2:second}
+	- ${3:third}
+	$0
+	
+snippet ordered_list
+	 1. ${1:${SELECTED_TEXT:first}}
+	 2. ${2:second}
+	 3. ${3:third}
+	 $0
+
+snippet horizontal_rule
+	 ----------\n
+
+snippet strikethrough
+	~~${1:${SELECTED_TEXT:Striked Text}}~~
+
+snippet bold
+	**${1:${SELECTED_TEXT:Bold Text}}**$0
+
+snippet italic
+	*${1:${SELECTED_TEXT:Italic Text}}*$0
+
+snippet heading1
+	# ${1:${SELECTED_TEXT:Heading 1}}
+snippet heading2
+	## ${1:${SELECTED_TEXT:Heading 2}}
+snippet heading3
+	### ${1:${SELECTED_TEXT:Heading 3}}
+snippet heading4
+	#### ${1:${SELECTED_TEXT:Heading 4}}
+snippet heading5
+	##### ${1:${SELECTED_TEXT:Heading 5}}
+snippet heading6
+	###### ${1:${SELECTED_TEXT:Heading 6}}
+
+snippet quote
+	> ${1:${SELECTED_TEXT:Your Quote}}
+
