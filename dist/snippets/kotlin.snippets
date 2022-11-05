@@ -25,6 +25,16 @@ snippet class:Any
 	}
 snippet data_class
 	data class ${1:foo}($0)
+snippet interface
+	interface $1 ${2:: Foo}
+
+# Grtter & Setter
+snippet get
+	get() = field
+snippet set
+	set(value) {
+		field = value
+	}
 
 # Functions
 snippet fun
@@ -105,3 +115,21 @@ snippet @re
 	return ${1:param}
 snippet @th
 	throws ${1:class}
+
+# Collections
+snippet arrof
+	arrayOf($1)
+snippet arrofnull
+	arrayOfNulls()
+snippet listof
+	listOf($1)
+snippet mlistof
+	mutableListOf($1)
+snippet mapof
+	mapOf($1)
+snippet mapof
+	mutableMapOf($1)
+snippet setof
+	setOf($1)
+snippet msetof
+	mutableSetOf($1)
