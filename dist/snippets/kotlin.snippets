@@ -27,6 +27,14 @@ snippet data_class
 	data class ${1:foo}($0)
 snippet interface
 	interface $1 ${2:: Foo}
+snippet init
+	init {
+		$1
+	}
+snippet constructor
+	constructor($1) : this($2) {
+		$0
+	}
 
 # Grtter & Setter
 snippet get
@@ -133,3 +141,7 @@ snippet setof
 	setOf($1)
 snippet msetof
 	mutableSetOf($1)
+snippet hashsof
+	hashSetOf()
+snippet hashmof
+	hashMapOf()
