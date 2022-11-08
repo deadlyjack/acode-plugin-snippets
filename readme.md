@@ -1,6 +1,6 @@
 # acode-plugin-snippets
 
-Snippets plugin for acode editor.
+> Snippets plugin for acode editor.
 
 **NOTE:** This plugin is not fully supported in Acode version lower than v1.6.0 (212).
 Please update your **Acode App** to latest version for using this plugin.
@@ -8,7 +8,7 @@ Please update your **Acode App** to latest version for using this plugin.
 ## How to enable custom snippets?
 
 - Open command palette
-- Type 'set snippets path'
+- Type `set snippets path`
 - Create a new directory or select a directory with snippets in it.
 - Navigate to the snippet directory, open and edit any snippets file
 - Restart the app.
@@ -16,7 +16,7 @@ Please update your **Acode App** to latest version for using this plugin.
 ## How to disable custom snippets?
 
 - Open command palette
-- Type 'reset snippets path'
+- Type `reset snippets path`
 - Restart the app.
 
 ## Supported languages in Snippet Plugin
