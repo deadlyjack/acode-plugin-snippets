@@ -3,7 +3,7 @@
 Snippets plugin for acode editor.
 
 **NOTE:** This plugin is not fully supported in Acode version lower than v1.6.0 (212).
-Please update your use latest version of acode.
+Please update your **Acode App** to latest version for using this plugin.
 
 ## How to enable custom snippets?
 
@@ -18,6 +18,61 @@ Please update your use latest version of acode.
 - Open command palette
 - Type 'reset snippets path'
 - Restart the app.
+
+## Supported languages in Snippet Plugin
+
+- Abc
+- ActionScript
+- C/C++
+- Clojure
+- Coffee
+- CsoundSynthesizer
+- CsoundOrchestra
+- CSS
+- Dart
+- Diff
+- Django
+- Drools
+- Edifacts
+- Erlang
+- Fsl
+- Gobstones
+- Golang
+- Graphqlschema
+- Haml
+- Haskell
+- HTML
+- Java
+- JavaScript
+- Jsp
+- Jsx
+- Kotlin
+- Liquid
+- Lsl
+- Lua
+- Makefile
+- Markdown
+- Maze
+- Perl
+- Php
+- Python
+- R
+- Razor
+- Robot
+- Rst
+- Ruby
+- Rust
+- Sh
+- Snippets
+- SQL
+- SQLServer
+- Swift
+- TCL
+- Textile
+- Tsx
+- Typescript
+- Velocity
+- Wallok
 
 ## How to write snippets?
 
