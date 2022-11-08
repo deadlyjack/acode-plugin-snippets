@@ -1,6 +1,6 @@
 # acode-plugin-snippets
-
-> Snippets plugin for acode editor.
+![version](https://img.shields.io/badge/Latest%20version-V1.2.3-green)
+> Snippets plugin for acode editor. It provides autocompletion of codes of different languages that are listed below.
 
 **NOTE:** This plugin is not fully supported in Acode version lower than v1.6.0 (212).
 Please update your **Acode App** to latest version for using this plugin.
@@ -73,6 +73,9 @@ Please update your **Acode App** to latest version for using this plugin.
 - Typescript
 - Velocity
 - Wallok
+
+## Authors
+- [@Ajit Kumar](https://github.com/deadlyjack)
 
 ## How to write snippets?
 
