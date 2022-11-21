@@ -31,31 +31,31 @@ snippet debug_assert
 snippet debug_assert_eq
 	debug_assert_eq!(${1}, ${2});
 snippet env
-	env!(\"${1}\")
+	env!("${1}")
 snippet file
 	file!()
 snippet format
-	format!(\"${1:\\{${2::?}\\}}\")
+	format!("${1:{${2::?}}}")
 snippet format_args
-	format_args!(\"${1:\\{${2::?}\\}}\")
+	format_args!("${1:{${2::?}}}")
 snippet include
-	include!(\"${1}\");
+	include!("${1}");
 snippet include_bytes
-	include_bytes!(\"${1}\")
+	include_bytes!("${1}")
 snippet include_str
-	include_str!(\"${1}\")
+	include_str!("${1}")
 snippet line
 	line!()
 snippet module_path
 	module_path!()
 snippet option_env
-	option_env!(\"${1}\")
+	option_env!("${1}")
 snippet panic
-	panic!(\"${1:\\{${2::?}\\}}\");
+	panic!("${1:{${2::?}}}");
 snippet print
-	print!(\"${1:\\{${2::?}\\}}\");
+	print!("${1:{${2::?}}}");
 snippet println
-	println!(\"${1:\\{${2::?}\\}}\");
+	println!("${1:{${2::?}}}");
 snippet stringify
 	stringify!(${1})
 snippet thread_local
@@ -69,9 +69,9 @@ snippet unreachable
 snippet vec
 	vec![${1}]
 snippet write
-	write!(${1}, \"${2:\\{${3::?}\\}}\")
+	write!(${1}, "${2:{${3::?}}}")
 snippet writeln
-	writeln!(${1}, \"${2:\\{${3::?}\\}}\")
+	writeln!(${1}, "${2:{${3::?}}}")
 snippet Err
 	Err(${1})
 snippet Ok
@@ -98,11 +98,11 @@ snippet else
 snippet extern-crate
 	extern crate ${1:name};
 snippet extern-fn
-	extern \"C\" fn ${1:name}(${2:arg}: ${3:Type}) -> ${4:RetType} {
+	extern "C" fn ${1:name}(${2:arg}: ${3:Type}) -> ${4:RetType} {
 		${5:// add code here}
 	}
 snippet extern-mod
-	extern \"C\" {
+	extern "C" {
 		${2:// add code here}
 	}
 snippet fn

@@ -2,7 +2,7 @@
   "id": "acode.plugin.snippets",
   "name": "Snippets",
   "main": "dist/main.js",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "readme": "readme.md",
   "icon": "icon.png",
   "files": [
@@ -55,7 +55,10 @@
     "snippets/tex.snippets",
     "snippets/textile.snippets",
     "snippets/velocity.snippets",
-    "snippets/wollok.snippets"
+    "snippets/wollok.snippets",
+    "snippets/typescript.snippets",
+    "snippets/tsx.snippets",
+    "snippets/golang.snippets",
   ],
   "author": {
     "name": "Ajit Kumar",

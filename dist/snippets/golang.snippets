@@ -1,0 +1,188 @@
+snippet im
+	import "${1:package}"
+snippet ims
+	import (
+		"${1:package}"
+	)
+snippet co
+	const ${1:name} = ${2:value}
+snippet cos
+	const (
+		${1:name} = ${2:value}
+	)
+snippet tyi
+	type ${1:name} interface {
+		$0
+	}
+snippet tys
+	type ${1:name} struct {
+		$0
+	}
+snippet pkgm
+	package main
+	
+	func main() {
+		$0
+	}
+snippet func
+	func $1($2) $3 {
+		$0
+	}
+snippet var
+	var ${1:name} ${2:type}
+snippet switch
+	switch ${1:expression} {
+	case ${2:condition}:
+		$0
+	}
+snippet sel
+	select {
+	case ${1:condition}:
+		$0
+	}
+snippet cs
+	case ${1:condition}:$0
+snippet for
+	for ${1:i} := 0; $1 < ${2:count}; $1${3:++} {
+		$0
+	}
+snippet forr
+	for ${1:_, }${2:var} := range ${3:var} {
+		$0
+	}
+snippet ch
+	chan ${1:type}
+snippet map
+	map[${1:type}]${2:type}
+snippet in
+	interface{}
+snippet if
+	if ${1:condition} {
+		$0
+	}
+snippet else
+	else {
+		$0
+	}
+snippet if else
+	if ${1:condition} {
+		$2
+	} else {
+		$0
+	}
+snippet iferr
+	if err != nil {
+		${1:return ${2:nil, }${3:err}}
+	}
+snippet fp
+	fmt.Println("$1")
+snippet ff
+	fmt.Printf("$1", ${2:var})
+snippet lp
+	log.Println("$1")
+snippet lf
+	log.Printf("$1", ${2:var})
+snippet lv
+	log.Printf("${1:var}: %#+v\\\\n\", ${1:var})
+snippet tl
+	t.Log("$1")
+snippet tlf
+	t.Logf("$1", ${2:var})
+snippet tlv
+	t.Logf("${1:var}: %#+v\\\\n\", ${1:var})
+snippet make
+	make(${1:type}, ${2:0})
+snippet new
+	new(${1:type})
+snippet panic
+	panic("$0")
+snippet wr
+	${1:w} http.ResponseWriter, ${2:r} *http.Request
+snippet hf
+	${1:http}.HandleFunc("${2:}", ${3:handler})
+snippet http handler
+	func $1(${2:w} http.ResponseWriter, ${3:r} *http.Request) {
+		$0
+	}
+snippet http.Redirect
+	http.Redirect(${1:w}, ${2:r}, "${3:}", ${4:http.StatusFound})
+snippet http.Error
+	http.Error(${1:w}, ${2:err}.Error(), ${3:http.StatusInternalServerError})
+snippet http.ListenAndServe
+	http.ListenAndServe("${1::8080}", ${2:nil})
+snippet http.Serve
+	http.Serve("${1::8080}", ${2:nil})
+snippet go
+	go func($1) {
+		$0
+	}($2)
+snippet gf
+	go ${1:func}($0)
+snippet defer
+	defer ${1:func}($0)
+snippet test func
+	func Test$1(t *testing.T) {
+		$0
+	}
+snippet benchmark func
+	func Benchmark$1(b *testing.B) {
+		for ${2:i} := 0; ${2:i} < b.N; ${2:i}++ {
+			$0
+		}
+	}
+snippet example func
+	func Example$1() {
+		$2
+		//Output:
+		$3
+	}
+snippet tdt
+	func Test$1(t *testing.T) {
+		testCases := []struct {
+			desc	string
+			$2
+		}{
+		{
+			desc: \"$3\",
+				$4
+			},
+		}
+		for _, tC := range testCases {
+			t.Run(tC.desc, func(t *testing.T) {
+				$0
+			})
+		}
+	}
+snippet func init
+	func init() {
+		$1
+	}
+snippet func main
+	func main() {
+		$1
+	}
+snippet meth
+	func (${1:receiver} ${2:type}) ${3:method}($4) $5 {
+		$0
+	}
+snippet helloweb
+	package main
+	
+	import (
+		"fmt"
+		"net/http"
+		"time"
+		)
+		func greet(w http.ResponseWriter, r *http.Request) {
+			fmt.Fprintf(w, \"Hello World! %s\", time.Now())
+		}
+		func main() {
+			http.HandleFunc(\"/\", greet)
+				http.ListenAndServe(\":8080\", nil)
+		}
+snippet sort
+	type ${1:SortBy} []${2:Type}
+	
+	func (a $1) Len() int           { return len(a) }
+	func (a $1) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
+	func (a $1) Less(i, j int) bool { ${3:return a[i] < a[j]} }
