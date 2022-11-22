@@ -58,7 +58,7 @@
     "snippets/wollok.snippets",
     "snippets/typescript.snippets",
     "snippets/tsx.snippets",
-    "snippets/golang.snippets",
+    "snippets/golang.snippets"
   ],
   "author": {
     "name": "Ajit Kumar",
