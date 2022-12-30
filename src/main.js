@@ -4,6 +4,7 @@ import plugin from '../plugin.json';
 const pluginId = plugin.id;
 const config = ace.require('ace/config');
 const { snippetManager } = ace.require('ace/snippets');
+const appSettings = acode.require('settings');
 
 class AcodeSnippets {
   #snippetsLocation;
