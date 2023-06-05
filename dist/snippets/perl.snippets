@@ -51,7 +51,7 @@ snippet eval
 	eval {
 		${1:# do something risky...}
 	};
-	if (my $e = $@) {
+	if (my \$e = $@) {
 		${2:# handle failure...}
 	}
 # While Loop
@@ -64,7 +64,7 @@ snippet xwh
 	${1:expression} while ${2:condition};${3}
 # C-style For Loop
 snippet cfor
-	for (my $${2:var} = 0; $$2 < ${1:count}; $$2${3:++}) {
+	for (my $${2:var} = 0; $\$2 < ${1:count}; $$2${3:++}) {
 		${4:# body...}
 	}
 # For loop one-line
@@ -108,7 +108,7 @@ snippet parent
 	use parent qw(${1:Parent Class});
 # Read File
 snippet slurp
-	my $${1:var} = do { local $/; open my $file, '<', "${2:file}"; <$file> };
+	my $${1:var} = do { local $/; open my \$file, '<', "${2:file}"; <\$file> };
 	${3}
 # strict warnings
 snippet strwar
@@ -117,8 +117,8 @@ snippet strwar
 # older versioning with perlcritic bypass
 snippet vers
 	## no critic
-	our $VERSION = '${1:version}';
-	eval $VERSION;
+	our \$VERSION = '${1:version}';
+	eval \$VERSION;
 	## use critic
 # new 'switch' like feature
 snippet switch
@@ -196,7 +196,7 @@ snippet ppod
 
 	=head1 SYNOPSIS
 
-	  use $1;
+	  use \$1;
 
 	  ${3:# synopsis...}
 
@@ -230,9 +230,9 @@ snippet psubi
 	=cut
 # inline documented subroutine
 snippet subpod
-	=head2 $1
+	=head2 \$1
 
-	Summary of $1
+	Summary of \$1
 
 	=cut
 
@@ -290,8 +290,8 @@ snippet has
 # override
 snippet override
 	override ${1:attribute} => sub {
-		${2:# my $self = shift;};
-		${3:# my ($self, $args) = @_;};
+		${2:# my \$self = shift;};
+		${3:# my (\$self, \$args) = @_;};
 	};
 
 
@@ -307,17 +307,17 @@ snippet tlib
 
 #test methods
 snippet tmeths
-	$ENV{TEST_METHOD} = '${1:regex}';
+	\$ENV{TEST_METHOD} = '${1:regex}';
 
 # runtestclass
 snippet trunner
 	use ${1:test_class};
-	$1->runtests();
+	\$1->runtests();
 
 # Test::Class-style test
 snippet tsub
 	sub t${1:number}_${2:test_case} :Test(${3:num_of_tests}) {
-		my $self = shift;
+		my \$self = shift;
 		${4:#  body}
 
 	}
@@ -325,14 +325,14 @@ snippet tsub
 # Test::Routine-style test
 snippet trsub
 	test ${1:test_name} => { description => '${2:Description of test.}'} => sub {
-		my ($self) = @_;
+		my (\$self) = @_;
 		${3:# test code}
 	};
 
 #prep test method
 snippet tprep
 	sub prep${1:number}_${2:test_case} :Test(startup) {
-		my $self = shift;
+		my \$self = shift;
 		${4:#  body}
 	}
 
@@ -341,7 +341,7 @@ snippet debug_trace
 	use Carp; # 'verbose';
 	# cloak "die"
 	# warn "warning"
-	$SIG{'__DIE__'} = sub {
+	\$SIG{'__DIE__'} = sub {
 		require Carp; Carp::confess
 	};
 
