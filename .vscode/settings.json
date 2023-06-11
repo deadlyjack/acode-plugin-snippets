@@ -4,5 +4,10 @@
     "cert": "D:\\Dev\\server.crt", //full path of the certificate
     "key": "D:\\Dev\\server.key", //full path of the private key
     "passphrase": "1234"
-  }
+  },
+  "cSpell.words": [
+    "Acode",
+    "Ajit",
+    "deadlyjack"
+  ]
 }

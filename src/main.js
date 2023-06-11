@@ -8,35 +8,39 @@ const appSettings = acode.require('settings');
 
 class AcodeSnippets {
   #snippetsLocation;
-  #changeModeListner;
+  #changeModeListener;
   #baseUrl = '';
 
   constructor() {
     this.#setVariables();
-    this.#changeModeListner = this.#onChangeMode.bind(this);
+    this.#changeModeListener = this.#onChangeMode.bind(this);
     if (!appSettings.value[plugin.id]) {
       this.#saveSnippetLocation('');
     }
   }
 
-  async init() {
+  async init(baseUrl) {
     const { editor } = editorManager;
+
     editor.setOption('enableBasicAutocompletion', true);
     editor.setOption('enableLiveAutocompletion', true);
-    editor.on("changeMode", this.#changeModeListner);
+    editor.on("changeMode", this.#changeModeListener);
+
+    this.baseUrl = baseUrl;
     this.#loadCommands();
     this.#onChangeMode();
   }
 
   async destroy() {
     const { editor } = editorManager;
-    editor.on("changeMode", this.#changeModeListner);
+    editor.on("changeMode", this.#changeModeListener);
     if (snippetManager.files) {
       snippetManager.files = [];
     }
     this.#unloadCommands();
   }
 
+  /**@type {string} */
   get baseUrl() {
     return this.#baseUrl;
   }
@@ -46,9 +50,9 @@ class AcodeSnippets {
    */
   set baseUrl(value) {
     this.#baseUrl = value;
-    const snippetLocaion = this.#getSnippetLocation();
-    if (snippetLocaion) {
-      this.#snippetsLocation = snippetLocaion;
+    const snippetLocation = this.#getSnippetLocation();
+    if (snippetLocation) {
+      this.#snippetsLocation = snippetLocation;
       return;
     }
     this.#snippetsLocation = this.#joinUrl(value, 'snippets');
@@ -196,13 +200,13 @@ class AcodeSnippets {
 
   #saveSnippetLocation(url) {
     appSettings.value[plugin.id] = {
-      snippetLocaion: url
+      snippetLocation: url
     };
-    appSettings.update(false);
+    appSettings.update();
   }
 
   #getSnippetLocation() {
-    return appSettings.value[plugin.id]?.snippetLocaion || '';
+    return appSettings.value[plugin.id]?.snippetLocation || '';
   }
 
   async #setSnippetPath() {
@@ -268,6 +272,35 @@ class AcodeSnippets {
     await fs.createFile(filename, response);
   }
 
+  onSettingsChange(key) {
+    if (key === 'setSnippetsDirectory') {
+      this.#setSnippetPath();
+      return;
+    }
+
+    if (key === 'resetSnippetsDirectory') {
+      this.#resetSnippetPath();
+      return;
+    }
+  }
+
+  get settingsList() {
+    return [
+      {
+        key: 'setSnippetsDirectory',
+        text: 'Set snippets directory',
+      },
+      {
+        key: 'resetSnippetsDirectory',
+        text: 'Reset snippets directory',
+      }
+    ]
+  }
+
+  get settings() {
+    return appSettings.value[plugin.id];
+  }
+
   get #commands() {
     return [
       {
@@ -280,30 +313,20 @@ class AcodeSnippets {
           win: "Tab"
         }
       },
-      {
-        name: "setSnippetsDirectory",
-        description: "Set snippets directory",
-        exec: () => {
-          this.#setSnippetPath();
-        },
-      },
-      {
-        name: "resetSnippetsDirectory",
-        description: "Reset snippets directory",
-        exec: () => {
-          this.#resetSnippetPath();
-        },
-      }
     ]
   }
 }
 
 if (window.acode) {
   const plugin = new AcodeSnippets();
-  acode.setPluginInit(pluginId, (baseUrl, $page, { cacheFileUrl, cacheFile }) => {
-    plugin.baseUrl = baseUrl;
-    plugin.init($page, cacheFile, cacheFileUrl);
-  });
+  acode.setPluginInit(
+    pluginId,
+    plugin.init.bind(plugin),
+    {
+      list: plugin.settingsList,
+      cb: plugin.onSettingsChange.bind(plugin)
+    }
+  );
   acode.setPluginUnmount(pluginId, () => {
     plugin.destroy();
   });

@@ -3,21 +3,6 @@ const path = require('path');
 
 module.exports = (env, options) => {
   const { mode = 'development' } = options;
-  const rules = [
-    {
-      test: /\.hbs$/,
-      use: ['raw-loader'],
-    },
-    {
-      test: /\.m?js$/,
-      use: {
-        loader: 'babel-loader',
-        options: {
-          presets: ['@babel/preset-env'],
-        },
-      },
-    },
-  ];
 
   const main = {
     mode,
@@ -26,11 +11,14 @@ module.exports = (env, options) => {
     },
     output: {
       path: path.resolve(__dirname, 'dist'),
-      filename: '[name].js',
-      chunkFilename: '[name].js',
     },
     module: {
-      rules,
+      rules: [
+        {
+          test: /\.(js|jsx)$/i,
+          loader: "babel-loader",
+        },
+      ],
     },
     plugins: [
       {
