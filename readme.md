@@ -70,6 +70,7 @@ Please update your **Acode App** to latest version for using this plugin.
 - TCL
 - Textile
 - Tsx
+- Twig
 - Typescript
 - Velocity
 - Wallok
