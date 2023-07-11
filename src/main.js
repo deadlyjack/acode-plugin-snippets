@@ -174,14 +174,6 @@ class AcodeSnippets {
         }
       );
     }
-
-    (function () {
-      window.require([`ace/snippets/${scope}`], (m) => {
-        if (typeof module == "object" && typeof exports == "object" && module) {
-          module.exports = m;
-        }
-      });
-    })();
   }
 
   #joinUrl(path1, path2) {
