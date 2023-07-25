@@ -23,6 +23,7 @@ Please update your **Acode App** to latest version for using this plugin.
 
 - Abc
 - ActionScript
+- Blade
 - C/C++
 - Clojure
 - Coffee
