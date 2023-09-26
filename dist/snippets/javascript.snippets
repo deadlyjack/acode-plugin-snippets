@@ -208,3 +208,768 @@ snippet prom
 	new Promise((resolve, reject) => {
 		$1
 	});
+
+snippet exptp
+	export type ${1:first} = {${2:second}}
+
+snippet expint
+	export interface ${1:first} {${2:second}}
+
+#React snippets
+#Creates a React component class with ES7 module system and TypeScript interfaces
+snippet tsrcc
+		import { Component } from 'react' 
+		
+		type Props = {} type State = {} 
+		
+		export default class ${1:${TM_FILENAME_BASE}} extends Component { state = {} render() { return (${1:first}) } }
+		
+#Creates a React component class with ES7 module system and TypeScript interfaces
+snippet tsrce
+	import { Component } from 'react' 
+	
+	type Props = {} type State = {} 
+	
+	class ${1:${TM_FILENAME_BASE}} extends Component { state = {} render() { return (${1:first}) } } 
+	
+	export default ${1:${TM_FILENAME_BASE}}
+	
+#Creates a React Functional Component with ES7 module system and TypeScript interface
+snippet tsrfce
+	type Props = {} 
+	
+	function ${1:${TM_FILENAME_BASE}}({}: Props) { return (${1:first}) } 
+	
+	export default ${1:${TM_FILENAME_BASE}}
+
+#Creates a React Functional Component with ES7 module system and TypeScript interface
+snippet tsrfc
+	type Props = {} 
+	
+	export default function ${1:${TM_FILENAME_BASE}}({}: Props) { return (${1:first}) }
+
+#Creates a React Arrow Function Component with ES7 module system and TypeScript interface
+snippet tsrafce
+	type Props = {} 
+	
+	const ${1:${TM_FILENAME_BASE}} = (props: Props) => { return (${1:first}) } 
+	
+	export default ${1:${TM_FILENAME_BASE}}
+
+#Creates a React Arrow Function Component with ES7 module system and TypeScript interface
+snippet tsrafc
+	type Props = {} 
+	
+	const ${1:${TM_FILENAME_BASE}} = (props: Props) => { return (${1:first}) }
+
+#Creates a React pure component class with ES7 module system and TypeScript interface
+snippet tsrpc
+	import { PureComponent } from 'react' 
+	
+	type Props = {} 
+	
+	export default class ${1:${TM_FILENAME_BASE}} extends PureComponent { render() { return (${1:first}) } }
+
+#Creates a React pure component class with ES7 module system and TypeScript interface
+snippet tsrpce
+	import { PureComponent } from 'react' 
+	
+	type Props = {} 
+	
+	class ${1:${TM_FILENAME_BASE}} extends PureComponent { render() { return (${1:first}) } } 
+	
+	export default ${1:${TM_FILENAME_BASE}}
+
+#Creates a React component class with connected redux and ES7 module system and TypeScript interfaces
+snippet tsrcredux
+	import { connect } from 'react-redux' 
+	import { Component } from 'react' 
+	
+	type Props = {} type State = {} 
+	
+	export class ${1:${TM_FILENAME_BASE}} extends Component { state = {} render() { return (${1:first}) } } 
+	
+	const mapStateToProps = (state) => ({}) 
+	
+	const mapDispatchToProps = {} 
+	export default connect(mapStateToProps, mapDispatchToProps)(${1:${TM_FILENAME_BASE}})
+
+#Creates a React Arrow Function Component with ES7 module system
+snippet rafc
+	export const ${1:${TM_FILENAME_BASE}} = () => { return (${1:first}) }
+
+#Creates a React Arrow Function Component with ES7 module system with PropTypes
+snippet rafcp
+	import PropTypes from 'prop-types' 
+	
+	const ${1:${TM_FILENAME_BASE}} = props => { return (${1:first}) } ${1:${TM_FILENAME_BASE}}.propTypes = {} 
+	
+	export default ${1:${TM_FILENAME_BASE}}
+
+#Creates a React Arrow Function Component with ES7 module system
+snippet rafce
+	const ${1:${TM_FILENAME_BASE}} = () => { return (${1:first}) } 
+	
+	export default ${1:${TM_FILENAME_BASE}}
+
+#Creates a React component class with ES7 module system
+
+snippet rcc
+	import { Component } from 'react' 
+	
+	export default class ${1:${TM_FILENAME_BASE}} extends Component { render() { return (${1:first}) } }
+
+#Creates a React component class with PropTypes and ES7 module system
+snippet rccp
+	import PropTypes from 'prop-types' 
+	import { Component } from 'react' 
+	
+	export default class ${1:${TM_FILENAME_BASE}} extends Component { static propTypes = {${2:second}: ${3:third}} render() { return (${1:first}) } }
+
+#Creates a React component class with connected redux and ES7 module system
+snippet rcredux
+	import { Component } from 'react' 
+	import { connect } from 'react-redux' 
+	
+	export class ${1:${TM_FILENAME_BASE}} extends Component { render() { return (${1:first}) } } 
+	
+	const mapStateToProps = (state) => ({}) 
+	
+	const mapDispatchToProps = {} 
+	export default connect(mapStateToProps, mapDispatchToProps)(${1:${TM_FILENAME_BASE}})
+
+#Creates a React component class with PropTypes with connected redux and ES7 module system
+snippet rcreduxp
+	import PropTypes from 'prop-types' 
+	import { Component } from 'react' 
+	import { connect } from 'react-redux' 
+	
+	export class ${1:${TM_FILENAME_BASE}} extends Component { static propTypes = { ${2:second}: ${3:third} } render() { return (${1:first}) } } 
+	
+	const mapStateToProps = (state) => ({}) 
+	
+	const mapDispatchToProps = {} 
+	export default connect(mapStateToProps, mapDispatchToProps)(${1:${TM_FILENAME_BASE}})
+
+#Creates a React component class with ES7 module system
+snippet rce
+	import { Component } from 'react' 
+	
+	export class ${1:${TM_FILENAME_BASE}} extends Component { render() { return (${1:first}) } } 
+	
+	export default ${1:${TM_FILENAME_BASE}}
+
+#Creates a React component class with ES7 module system
+snippet rcep
+	import PropTypes from 'prop-types' 
+	import { Component } from 'react' 
+	
+	export class ${1:${TM_FILENAME_BASE}} extends Component { static propTypes = {} render() { return (${1:first}) } } 
+	
+	export default ${1:${TM_FILENAME_BASE}}
+
+#Creates a React pure component class with ES7 module system export
+snippet rpce
+	import { PureComponent } from 'react' 
+	
+	export class ${1:${TM_FILENAME_BASE}} extends PureComponent { render() { return (${1:first}) } } 
+	
+	export default ${1:${TM_FILENAME_BASE}}
+
+#Creates a React pure component class with ES7 module system
+snippet rpc
+	import { PureComponent } from 'react' 
+
+	export default class ${1:${TM_FILENAME_BASE}} extends PureComponent { render() { return (${1:first}) } }
+
+#Creates a React component class with ES7 module system
+snippet rpcp
+	import PropTypes from 'prop-types' 
+	import { PureComponent } from 'react' 
+	
+	export default class ${1:${TM_FILENAME_BASE}} extends PureComponent { static propTypes = {} render() { return (${1:first}) } }
+
+#Creates a React Memo Function Component with ES7 module system
+snippet rmc
+	import { memo } from 'react' 
+	
+	const ${1:${TM_FILENAME_BASE}} = memo(() => { return (${1:first}) }) 
+	
+	export default ${1:${TM_FILENAME_BASE}}
+
+#Creates a React Memo Function Component with ES7 module system with PropTypes
+snippet rmcp
+	import PropTypes from 'prop-types' 
+	import { memo } from 'react' 
+	
+	const ${1:${TM_FILENAME_BASE}} = memo((props) => { return (${1:first}) }) ${1:${TM_FILENAME_BASE}}.propTypes = {} 
+	
+	export default ${1:${TM_FILENAME_BASE}}
+
+#Creates a React Functional Component with ES7 module system
+snippet rfc
+	export default function ${1:${TM_FILENAME_BASE}}() { return (${1:first}) }
+
+#Creates a React functional component with connected redux and ES7 module system
+snippet rfcredux
+	import { connect } from 'react-redux' 
+	
+	export const ${1:${TM_FILENAME_BASE}} = (props) => { return (${1:first}) } 
+	
+	const mapStateToProps = (state) => ({}) 
+	
+	const mapDispatchToProps = {} 
+	export default connect(mapStateToProps, mapDispatchToProps)(${1:${TM_FILENAME_BASE}})
+
+#DEPRECATED: Creates a React functional component with PropTypes with connected redux and ES7 module system
+snippet rfcreduxp
+	import PropTypes from 'prop-types' 
+	import { connect } from 'react-redux' 
+	
+	export const ${1:${TM_FILENAME_BASE}} = (props) => { return (${1:first}) } ${1:${TM_FILENAME_BASE}}.propTypes = { ${2:second}: PropTypes.${3:third} } 
+	
+	const mapStateToProps = (state) => ({}) 
+	
+	const mapDispatchToProps = {} 
+	export default connect(mapStateToProps, mapDispatchToProps)(${1:${TM_FILENAME_BASE}})
+
+#Creates a React Functional Component with ES7 module system with PropTypes
+snippet rfcp
+	import PropTypes from 'prop-types' 
+	
+	function ${1:${TM_FILENAME_BASE}}(props) { return (${1:first}) } ${1:${TM_FILENAME_BASE}}.propTypes = {} 
+
+	export default ${1:${TM_FILENAME_BASE}}
+
+#Creates a React Functional Component with ES7 module system
+snippet rfce
+	function ${1:${TM_FILENAME_BASE}}() { return (${1:first}) } 
+	
+	export default ${1:${TM_FILENAME_BASE}}
+
+#If the specified expression is false, the message is written to the console along with a stack trace
+
+snippet cas
+	console.assert(${1:first}, ${2:second})
+
+#Clears the console
+snippet ccl
+	console.clear()
+
+#Writes the the number of times that count() has been invoked at the same line and with the same label
+snippet cco
+	console.count(${1:first})
+
+#Prints a JavaScript representation of the specified object
+snippet cdi
+	console.dir(${1:first})
+
+#Displays a message in the console and also includes a stack trace from where the method was called
+snippet cer
+	console.error(${1:first})
+
+#Groups and indents all following output by an additional level, until console.groupEnd() is called.
+snippet cgr
+	console.group('${1:first}')
+
+#Closes out the corresponding console.group().
+snippet cge
+	console.groupEnd()
+
+#Displays a message in the console
+snippet clg
+	console.log(${1:first})
+
+#Prints a stack trace from the point where the method was called
+snippet ctr
+	console.trace(${1:first})
+
+#Logs property with name.
+snippet clo
+	console.log('${1:first}', ${1:first})
+
+#Logs stringified JSON property with name.
+snippet clj
+	console.log('${1:first}', JSON.stringify(${1:first}, null, 2))
+
+#Console time wrapper
+snippet ctm
+	console.time('${1:first}')
+
+#Console time end wrapper
+snippet cte
+console.timeEnd('${1:first}')
+
+#Displays a message in the console but also displays a yellow warning icon along with the logged message
+snippet cwa
+	console.warn(${1:first})
+
+#Displays a message in the console but also displays a blue information icon along with the logged message
+snippet cin
+	console.info(${1:first})
+
+#Logs table to console
+snippet ctl
+	console.table([${1:first}])
+
+snippet useCallback
+	useCallback( () => { ${1:first} }, [${2:second}], )
+
+snippet useContext
+	const ${1:first} = useContext(${2:second})
+
+snippet useEffect
+	useEffect(() => { ${1:first} return () => { ${2:second} } }, [${3:third}])
+
+snippet useImperativeHandle
+	useImperativeHandle( ${1:first}, () => { ${2:second} }, [${3:third}], )
+
+snippet useLayoutEffect
+	useLayoutEffect(() => { ${1:first} return () => { ${2:second} }; }, [${3:third}])
+
+snippet useMemo
+	useMemo(() => ${1:first}, [${2:second}])
+
+snippet useReducer
+	const [state, dispatch] = useReducer(${1:first}, ${2:second}, ${3:third})
+
+snippet useRef
+	const ${1:first} = useRef(${2:second})
+
+snippet useStateSnippet
+	const [${1:first}, set${1/(.*)/${1:/capitalize}/}] = useState(${2:second})
+
+#Imports a module using a different name
+snippet ima
+import { ${2:second} as ${3:third} } from '${1:first}'
+
+#Syntax for importing a module
+snippet imd
+
+import { ${2:second} } from '${1:first}'
+
+snippet ime
+	import * as ${2:second} from '${1:first}'
+
+snippet imn
+	import '${1:first}'
+
+snippet impt
+	import PropTypes from 'prop-types'
+
+snippet imr
+	import React from 'react'
+
+snippet imrd
+	import ReactDOM from 'react-dom'
+
+snippet imrc
+	import { Component } from 'react'
+
+snippet imrcp
+	import { Component } from 'react' 
+	import PropTypes from 'prop-types'
+
+snippet imrm
+	import { memo } from 'react'
+
+snippet imrmp
+	import { memo } from 'react' 
+	import PropTypes from 'prop-types'
+
+snippet imrpc
+	import { PureComponent } from 'react'
+
+snippet imrpcp
+	import { PureComponent } from 'react' 
+	import PropTypes from 'prop-types'
+
+snippet imp
+	import ${2:second} from '${1:first}'
+
+#Array prop type
+snippet pta
+	PropTypes.array
+
+#Array prop type required
+snippet ptar
+	PropTypes.array.isRequired
+
+#Bool prop type
+snippet ptb
+	PropTypes.bool
+
+#Bool prop type required
+snippet ptbr
+	PropTypes.bool.isRequired
+
+#Function prop type
+snippet ptf
+	PropTypes.func
+
+#Func prop type required
+snippet ptfr
+	PropTypes.func.isRequired
+
+#Number prop type
+snippet ptn
+	PropTypes.number
+
+#Number prop type required
+snippet ptnr
+	PropTypes.number.isRequired
+
+#Object prop type
+snippet pto
+	PropTypes.object
+
+#Object prop type required
+snippet ptor
+	PropTypes.object.isRequired
+
+#String prop type
+snippet pts
+	PropTypes.string
+
+#String prop type required
+snippet ptsr
+	PropTypes.string.isRequired
+
+#Anything that can be rendered: numbers, strings, elements or an array
+snippet ptnd
+	PropTypes.node
+
+#Anything that can be rendered: numbers, strings, elements or an array required
+snippet ptndr
+	PropTypes.node.isRequired
+
+#React element prop type
+snippet ptel
+	PropTypes.element
+
+#React element prop type required
+snippet ptelr
+	PropTypes.element.isRequired
+
+#Is an instance of a class prop type
+snippet pti
+	PropTypes.instanceOf($0)
+
+#Is an instance of a class prop type required
+snippet ptir
+	PropTypes.instanceOf($0).isRequired
+
+#Prop type limited to specific values by treating it as an enum
+snippet pte
+	PropTypes.oneOf(['$0'])
+
+#Prop type limited to specific values by treating it as an enum required
+snippet pter
+	PropTypes.oneOf(['$0']).isRequired
+
+#An object that could be one of many types
+snippet ptet
+	PropTypes.oneOfType([ $0 ])
+
+#An object that could be one of many types required
+snippet ptetr
+	PropTypes.oneOfType([ $0 ]).isRequired
+
+#An array of a certain type
+snippet ptao
+	PropTypes.arrayOf($0)
+
+#An array of a certain type required
+snippet ptaor
+	PropTypes.arrayOf($0).isRequired
+
+#An object with property values of a certain type
+snippet ptoo
+	PropTypes.objectOf($0)
+
+#An object with property values of a certain type required
+snippet ptoor
+	PropTypes.objectOf($0).isRequired
+
+#An object taking on a particular shape
+snippet ptsh
+	PropTypes.shape({ $0 })
+
+#An object taking on a particular shape required
+snippet ptshr
+	PropTypes.shape({ $0 }).isRequired
+
+#An object with warnings on extra properties
+snippet ptex
+	PropTypes.exact({ $0 })
+
+#An object with warnings on extra properties required
+snippet ptexr
+	PropTypes.exact({ $0 }).isRequired
+
+#Any prop type
+snippet ptany
+	PropTypes.any
+
+snippet redux
+	import { connect } from 'react-redux'
+
+snippet rxaction
+	export const ${1:first} = (payload) => ({ type: ${2:second}, payload })
+
+snippet rxconst
+	export const ${1:first} = '${1:first}'
+
+snippet rxreducer
+	const initialState = {} 
+	
+	export default (state = initialState, { type, payload }) => { switch (type) { case ${1:first}: return { ...state, ...payload } default: return state } }
+
+snippet rxselect
+import { createSelector } from 'reselect' 
+
+export const ${1:first} = state => state.${2:second}
+
+snippet rxslice
+	import { createSlice } from '@reduxjs/toolkit' 
+	
+	const initialState = { } 
+	
+	const ${1:${TM_FILENAME_BASE}} = createSlice({ name: ${2:second}, initialState, reducers: {} }); 
+	
+	export const {} = ${1:${TM_FILENAME_BASE}}.actions 
+	
+	export default ${1:${TM_FILENAME_BASE}}.reducer
+
+snippet reduxmap
+	const mapStateToProps = (state) => ({}) 
+	
+	const mapDispatchToProps = {}
+
+#Testing `describe` block
+snippet desc
+	describe('${1:first}', () => { ${2:second} })
+
+#Testing asynchronous `it` block
+snippet tita
+	it('should ${1:first}', async () => { ${2:second} })
+
+#Testing `it` block
+snippet tit
+it('should ${1:first}', () => { ${2:second} })
+
+#Create test component
+snippet srtest
+	import React from 'react' 
+	import renderer from 'react-test-renderer' 
+	import { Provider } from 'react-redux' 
+	import store from '~/store' 
+	import { ${1:${TM_FILENAME_BASE}} } from '../${1:${TM_FILENAME_BASE}}' 
+	
+	describe('<${1:${TM_FILENAME_BASE}} />', () => { const defaultProps = {} 
+	const wrapper = renderer.create( <${1:${TM_FILENAME_BASE}} {...defaultProps} /> , ) test('render', () => { expect(wrapper).toMatchSnapshot() }) })
+
+snippet stest
+	import React from 'react'
+	import renderer from 'react-test-renderer' 
+	import { ${1:${TM_FILENAME_BASE}} } from '../${1:${TM_FILENAME_BASE}}' 
+	
+	describe('<${1:${TM_FILENAME_BASE}} />', () => { const defaultProps = {} 
+	const wrapper = renderer.create(<${1:${TM_FILENAME_BASE}} {...defaultProps} />) test('render', () => { expect(wrapper).toMatchSnapshot() }) })
+
+#Testing `asynchronous test` block
+snippet testa
+	test('should ${1:first}', async () => { ${2:second} })
+
+#Testing `test` block
+snippet test
+	test('should ${1:first}', () => { ${2:second} })
+
+snippet exp
+	export default ${1:first}
+
+snippet exd
+	export { ${2:second} } from '${1:first}'
+
+snippet exa
+	export { ${2:second} as ${3:third} } from '${1:first}'
+
+#Export named function
+snippet enf
+	export const ${1:first} = (${2:second}) => {${3:third}}
+
+#Export default function
+snippet edf
+export default (${1:first}) => {${2:second}}
+
+#Export default named function
+snippet ednf
+export default function ${1:first}(${2:second}) {${3:third}}
+
+#Creates a method inside a class
+snippet met
+	${1:first} = (${2:second}) => {${3:third}}
+
+#Creates a getter property inside a class
+snippet pge
+	get ${1:first}() { return this.${2:second} }
+
+#Creates a setter property inside a class
+snippet pse
+	set ${1:first}(${2:second}) {${3:third}}
+
+#Creates a forEach statement
+
+snippet fre
+	${1:first}.forEach(${2:second} => {${3:third}})
+
+#Iterating over property names of iterable objects
+
+snippet fof
+	for(let ${1:first} of ${2:second}) {${3:third}}
+
+#Iterating over property values of iterable objects
+snippet fin
+	for(let ${1:first} in ${2:second}) {${3:third}}
+
+#Creates an anonymous function
+snippet anfn
+	(${1:first}) => { ${2:second} }
+
+#Creates a named function
+snippet nfn
+	const ${1:first} = (${2:second}) => { ${3:third} }
+
+#Creates and assigns a local variable using object destructing
+snippet dob
+	const {${2:second}} = ${1:first}
+
+#Creates and assigns a local variable using array destructing
+snippet dar
+	const [${2:second}] = ${1:first}
+
+#Executes the given function at specified intervals
+
+snippet sti
+	setInterval(() => { ${1:first} }, ${2:second})
+
+#Executes the given function after the specified delay
+snippet sto
+setTimeout(() => { ${1:first} }, ${2:second})
+
+#Creates and returns a new Promise in the standard ES7 syntax
+snippet prom
+	return new Promise((resolve, reject) => { ${1:first} })
+
+#Creates and assigns a local variable using props destructing
+snippet cp
+	const { ${1:first} } = this.props
+
+#Creates and assigns a local variable using state destructing
+snippet cs
+const { ${1:first} } = this.state
+
+#Adds a default constructor for it('', () => {})the class that contains props as arguments
+snippet rconst
+	constructor(props) { super(props) this.state = { ${1:first} } }
+
+#Creates empty state object. To be used in a constructor.
+snippet est
+	state = { ${1:first} }
+
+#Invoked once, only on the client (not on the server), immediately after the initial rendering occurs.
+snippet cdm
+	componentDidMount() { ${1:first} }
+
+#Invoked before rendering when new props or state are being received.
+snippet scu
+	shouldComponentUpdate(nextProps, nextState) { ${1:first} }
+
+#Invoked immediately after the component's updates are flushed to the DOM.
+snippet cdup
+	componentDidUpdate(prevProps, prevState) { ${1:first}}
+
+#Invoked immediately before a component is unmounted from the DOM.
+snippet cwun
+	componentWillUnmount() {${1:first} }
+
+#Invoked right before calling the render method, both on the initial mount and on subsequent updates.
+snippet gdsfp
+	static getDerivedStateFromProps(props, state) {${1:first}}
+
+#Called right before mutations are made (e.g. before the DOM is updated)
+snippet gsbu
+	getSnapshotBeforeUpdate = (prevProps, prevState) => {${1:first}}
+
+#Create React context
+snippet rcontext
+	const ${1:first} = React.createContext()
+
+#Create ref statement used inside constructor
+snippet cref
+	this.${1:first}Ref = React.createRef()
+
+#Performs a shallow merge of nextState into current state
+snippet sst
+	this.setState({${1:first}})
+
+#Performs a shallow merge of nextState into current state
+snippet ssf
+	this.setState((state, props) => { return { ${1:first} }})
+
+#Access component's props
+snippet props
+	this.props.${1:first}
+
+#Initializes state in React class component
+snippet state
+	this.state.${1:first}
+
+#Binds this to a method
+snippet bnd
+	this.${1:first} = this.${1:first}.bind(this)
+
+snippet cmmb
+/** * ${1:first} */
+
+snippet hocredux
+	import { connect } from 'react-redux' 
+	import PropTypes from 'prop-types' 
+	
+	export const mapStateToProps = state => ({}) 
+	
+	export const mapDispatchToProps = {} 
+	
+	export const ${1:first} = (WrappedComponent) => { const hocComponent = ({ ...props }) => hocComponent.propTypes = {} return hocComponent } 
+	
+	export default WrapperComponent => connect(mapStateToProps, mapDispatchToProps)(${1:first}(WrapperComponent))
+
+snippet hoc
+	import PropTypes from 'prop-types' 
+	
+	export default (WrappedComponent) => { 
+	
+	const hocComponent = ({ ...props }) => hocComponent.propTypes = {} return hocComponent }
+
+snippet tpf
+	typeof ${1:first}
+	
+#react-router-dom snippets
+snippet imbr
+	import { BrowserRouter as Router } from 'react-router-dom'
+
+snippet imrr
+	import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom'
+	
+snippet imbrl
+	import { Link } from 'react-router-dom'
+
+snippet imbrnl
+	import { NavLink } from 'react-router-dom'
+
+snippet imbrc
+	import { Route, Switch, NavLink, Link } from 'react-router-dom'
+
+snippet imbrs
+	import { Switch } from 'react-router-dom'
+#End of react-router-dom snippets
